@@ -1,0 +1,164 @@
+.wrapper{
+  display: flex;
+
+  >div{
+    height: 100vh;
+  }
+
+  .chat-side{
+    @include bg_c(#253141);
+    width: 300px;
+    font-size: 16px;
+    color: $c_white;
+
+    .side-header{
+      height: 100px;
+      padding:20px;
+      display: flex;
+      align-items: center;
+
+      .side-header__box{
+        @include wh(100%,20px);
+        @include flex_between();
+        line-height: 20px;
+
+        .side-header__box__menu{
+          display: flex;
+
+          a{
+            display:block;
+            margin-left: 5px;
+            color: $c_white;
+          }
+        }
+      }
+    }
+
+    .side-groups{
+      @include bg_c(#2f3e51);
+      height: calc(100vh - 100px);
+
+      .side-group{
+        padding: 20px;
+
+        .group-name{
+          margin-bottom: 5px;
+          font-size: 15px;
+        }
+
+        .group-message{
+          margin-bottom: 20px;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .chat-main{
+    @include bg_c($c_white);
+    width: calc(100vw - 300px);
+
+    .main-header{
+      @include flex_between();
+      height: 100px;
+      padding: 0 40px;
+      border-bottom: solid #eee 1px;
+
+      .main-header__leftbox{
+
+        p{
+          margin-top: 35px;
+          font-size: 20px;
+          color: $c_d-gray;
+        }
+
+        p:last-of-type{margin-top: 15px;
+          font-size: 12px;
+          color: $c_l-gray;
+        }
+      }
+
+      a{
+        @include wh(72px,40px);
+        margin-top: 28px;
+        padding: 0 20px;
+        line-height: 40px;
+        font-size: 16px;
+        color: $c_l-blue;
+        border: solid $c_l-blue 1px;
+        text-decoration: none;
+      }
+    }
+
+    .main-messages{
+      @include bg_c(#fafafa);
+      height: calc(100vh - 190px);
+      padding: 35px 40px;
+
+      .main-message{
+
+        .message-top{margin-bottom: 12px;
+          font-size: 0;
+
+          p{
+            font-size: 16px;
+            color: $c_d-gray;
+            display: inline-block;
+          }
+
+          p:last-of-type{
+            margin-left: 10px;
+            font-size: 12px;
+            color: $c_l-gray;
+          }
+        }
+
+        .message-bottom{margin-bottom: 46px;
+          font-size: 14px;
+          color: #434a54;
+        }
+      }
+    }
+  }
+
+  .main-form{
+    @include bg_c(#d2d2d2);
+    height: 90px;
+    padding: 20px 40px;
+
+    form{
+      display: flex;
+
+      .form-box{
+        position: relative;
+
+        #message{
+          @include wh(calc(100vw - 495px),50px);
+          padding: 0 10px;
+          border: 0;
+        }
+
+        .input-box__image{
+          @include wh(40px,50px);
+          padding: 0 10px;
+          line-height: 50px;
+          text-align: right;
+          position: absolute;
+          right: 0;
+
+          input[type="file"]{
+            display: none;
+          }
+        }
+      }
+
+      .SubmitSend{
+        @include wh(100px,50px);
+        @include bg_c($c_l-blue);
+        margin-left: 15px;
+        border: 0;
+        color: $c_white;
+      }
+    }
+  }
+}

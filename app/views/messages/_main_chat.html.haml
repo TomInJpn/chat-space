@@ -1,0 +1,27 @@
+.chat-main
+  .main-header
+    .main-header__leftbox
+      %p test
+      %p Member：AAA
+    %a{href:"#"} Edit
+  .main-messages
+    .main-message
+      .message-top
+        %p AAA
+        %p 2020/06/06(Sat) 08:42:10
+      .message-bottom
+        %p.message testtesttesttesttesttest
+    .main-message
+      .message-top
+        %p AAA
+        %p 2020/06/06(Sat) 08:42:10
+      .message-bottom
+        %p.message testtesttesttesttesttest
+  .main-form<
+    =form_tag root_path do
+      .form-box
+        =text_field_tag :message,"",placeholder:"type a message"
+        %label{class: "input-box__image"}<
+          = icon('fas', 'image')
+          %input{type: "file"}
+      =submit_tag 'Send',class: :SubmitSend
