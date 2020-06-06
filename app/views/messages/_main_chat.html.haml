@@ -1,0 +1,27 @@
+.chat-main
+  .chat-main-header
+    .chat-main-header__leftbox
+      %p test
+      %p Member：AAA
+    = link_to 'Edit','#'
+  .chat-main-messages
+    .chat-main-message
+      .chat-main-message-top
+        %p AAA
+        %p 2020/06/06(Sat) 08:42:10
+      .chat-main-message-bottom
+        %p.message testtesttesttesttesttest
+    .chat-main-message
+      .chat-main-message-top
+        %p AAA
+        %p 2020/06/06(Sat) 08:42:10
+      .chat-main-message-bottom
+        %p.message testtesttesttesttesttest
+  .chat-main-form<
+    =form_tag root_path do
+      .chat-form-box
+        =text_field_tag :message,"",placeholder:"type a message"
+        %label{class: "chat-form-box__image"}<
+          = icon('fas', 'image')
+          %input{type: "file"}
+      =submit_tag 'Send',class: :submit_send

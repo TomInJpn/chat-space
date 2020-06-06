@@ -1,0 +1,11 @@
+@mixin flex_between(){
+  display: flex;
+  justify-content: space-between;
+}
+@mixin bg_c($color){
+  background-color: $color;
+}
+@mixin wh($w,$h){
+  width: $w;
+  height: $h;
+}
