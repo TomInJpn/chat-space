@@ -11,18 +11,18 @@
     font-size: 16px;
     color: $c_white;
 
-    .side-header{
+    &-header{
       height: 100px;
-      padding:20px;
+      padding: 20px;
       display: flex;
       align-items: center;
 
-      .side-header__box{
+      &__box{
         @include wh(100%,20px);
         @include flex_between();
         line-height: 20px;
 
-        .side-header__box__menu{
+        &__menu{
           display: flex;
 
           a{
@@ -41,12 +41,12 @@
       .side-group{
         padding: 20px;
 
-        .group-name{
+        &-name{
           margin-bottom: 5px;
           font-size: 15px;
         }
 
-        .group-message{
+        &-message{
           margin-bottom: 20px;
           font-size: 11px;
         }
@@ -58,13 +58,13 @@
     @include bg_c($c_white);
     width: calc(100vw - 300px);
 
-    .main-header{
+    &-header{
       @include flex_between();
       height: 100px;
       padding: 0 40px;
       border-bottom: solid #eee 1px;
 
-      .main-header__leftbox{
+      &__leftbox{
 
         p{
           margin-top: 35px;
@@ -90,14 +90,15 @@
       }
     }
 
-    .main-messages{
+    &-messages{
       @include bg_c(#fafafa);
       height: calc(100vh - 190px);
       padding: 35px 40px;
 
-      .main-message{
+      .chat-main-message{
 
-        .message-top{margin-bottom: 12px;
+        &-top{
+          margin-bottom: 12px;
           font-size: 0;
 
           p{
@@ -113,51 +114,52 @@
           }
         }
 
-        .message-bottom{margin-bottom: 46px;
+        &-bottom{
+          margin-bottom: 46px;
           font-size: 14px;
           color: #434a54;
         }
       }
     }
-  }
 
-  .main-form{
-    @include bg_c(#d2d2d2);
-    height: 90px;
-    padding: 20px 40px;
+    &-form{
+      @include bg_c(#d2d2d2);
+      height: 90px;
+      padding: 20px 40px;
 
-    form{
-      display: flex;
+      form{
+        display: flex;
 
-      .form-box{
-        position: relative;
+        .chat-form-box{
+          position: relative;
 
-        #message{
-          @include wh(calc(100vw - 495px),50px);
-          padding: 0 10px;
-          border: 0;
-        }
+          #message{
+            @include wh(calc(100vw - 495px),50px);
+            padding: 0 10px;
+            border: 0;
+          }
 
-        .input-box__image{
-          @include wh(40px,50px);
-          padding: 0 10px;
-          line-height: 50px;
-          text-align: right;
-          position: absolute;
-          right: 0;
+          &__image{
+            @include wh(40px,50px);
+            padding: 0 10px;
+            line-height: 50px;
+            text-align: right;
+            position: absolute;
+            right: 0;
 
-          input[type="file"]{
-            display: none;
+            input[type="file"]{
+              display: none;
+            }
           }
         }
-      }
 
-      .SubmitSend{
-        @include wh(100px,50px);
-        @include bg_c($c_l-blue);
-        margin-left: 15px;
-        border: 0;
-        color: $c_white;
+        .submit_send{
+          @include wh(100px,50px);
+          @include bg_c($c_l-blue);
+          margin-left: 15px;
+          border: 0;
+          color: $c_white;
+        }
       }
     }
   }
