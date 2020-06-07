@@ -1,13 +1,14 @@
 .chat-side
   .chat-side-header
     .chat-side-header__box
-      %p AAA
+      %p
+        =current_user.name
       %ul.chat-side-header__box__menu
         %li
-          =link_to "#" do
+          =link_to "#",class:"chat-side-header__box__menu__new" do
             %i.far.fa-edit
         %li
-          =link_to "#" do
+          =link_to edit_user_path(current_user),class:"chat-side-header__box__menu__edit" do
             %i.fas.fa-cog
   .side-groups
     .side-group

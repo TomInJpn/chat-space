@@ -13,7 +13,6 @@
 
     &-header{
       height: 100px;
-      padding: 20px;
       display: flex;
       align-items: center;
 
@@ -22,13 +21,26 @@
         @include flex_between();
         line-height: 20px;
 
+        >p{
+          margin-left: 20px;
+          font-weight: bold;
+        }
+
         &__menu{
           display: flex;
 
           a{
-            display:block;
-            margin-left: 5px;
             color: $c_white;
+            font-size: 14px;
+          }
+
+          &__new{
+            padding: 20px 0 20px 20px;
+          }
+
+          &__edit{
+            padding: 20px 20px 20px 0;
+            margin-left: 5px;
           }
         }
       }
@@ -146,6 +158,8 @@
             text-align: right;
             position: absolute;
             right: 0;
+            font-size: 1.3rem;
+            cursor: pointer;
 
             input[type="file"]{
               display: none;
@@ -159,6 +173,7 @@
           margin-left: 15px;
           border: 0;
           color: $c_white;
+          cursor: pointer;
         }
       }
     }
