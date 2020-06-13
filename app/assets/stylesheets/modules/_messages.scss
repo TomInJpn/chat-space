@@ -53,6 +53,11 @@
       .side-group{
         padding: 20px;
 
+        a{
+          text-decoration: none;
+          color: $c_white;
+        }
+
         &-name{
           margin-bottom: 5px;
           font-size: 15px;
