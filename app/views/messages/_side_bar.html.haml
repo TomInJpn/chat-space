@@ -5,12 +5,16 @@
         =current_user.name
       %ul.chat-side-header__box__menu
         %li
-          =link_to "#",class:"chat-side-header__box__menu__new" do
+          =link_to new_group_path,class:"chat-side-header__box__menu__new" do
             %i.far.fa-edit
         %li
           =link_to edit_user_path(current_user),class:"chat-side-header__box__menu__edit" do
             %i.fas.fa-cog
   .side-groups
-    .side-group
-      %p.side-group-name techcamp
-      %p.side-group-message まだメッセージがありません
+    - current_user.groups.each do |group|
+      .side-group
+        = link_to '#' do
+          %p.side-group-name
+            = group.name
+          %p.side-group-message
+            メッセージはまだありません。
