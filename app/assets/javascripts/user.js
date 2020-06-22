@@ -34,10 +34,13 @@ $(function() {
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
+    // var erises = $(".js-remove-btn");
+    // var erise=[]
+    // for(var i=0;i<erises.length;i++){erise.push($(".js-remove-btn")[i].attributes[1].value);}
     $.ajax({
       type: 'GET',
       url: '/users',
-      data: { keyword: input },
+      data: { keyword: input},
       dataType: 'json'
     })
     .done(function(users) {
