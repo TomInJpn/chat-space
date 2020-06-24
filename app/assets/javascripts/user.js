@@ -34,9 +34,11 @@ $(function() {
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
-    // var erises = $(".js-remove-btn");
-    // var erise=[]
-    // for(var i=0;i<erises.length;i++){erise.push($(".js-remove-btn")[i].attributes[1].value);}
+    if ($(".js-remove-btn")){
+      var chatmember = $(".js-remove-btn");
+      var chatmembers=[]
+      chatmember.each(function(i,cm){chatmembers.push(jQuery(cm).data("user-id"));})
+    }
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -47,7 +49,7 @@ $(function() {
       $("#user-search-result").empty();
       if (users.length !== 0) {
         users.forEach(function(user){
-          addUser(user);
+          if($.inArray(user["id"],chatmembers)==-1){addUser(user);}
         });
       } else if (input.length == 0) {
         return false;
