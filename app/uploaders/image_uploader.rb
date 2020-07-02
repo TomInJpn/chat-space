@@ -29,7 +29,7 @@ include CarrierWave::MiniMagick
   # end
 
   # Create different versions of your uploaded files:
-process resize_to_fit: [800, 800]
+process resize_to_fit: [100, 100]
   # version :thumb do
   #   process resize_to_fit: [50, 50]
   # end
